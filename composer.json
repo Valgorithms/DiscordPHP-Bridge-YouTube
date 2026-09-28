@@ -1,0 +1,70 @@
+{
+    "name": "vzgcoders/discordphp-bridge-youtube",
+    "description": "The YouTube connector for DiscordPHP-Bridge: a stream's live chat in Discord, go-live announcements, and moderation, within the daily API quota.",
+    "keywords": [
+        "discord",
+        "youtube",
+        "live-chat",
+        "livestream",
+        "relay",
+        "bridge",
+        "bot",
+        "reactphp",
+        "async",
+        "connector"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Valithor Obsidion",
+            "email": "valithor@valgorithms.com"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "react/event-loop": "^1.5",
+        "react/promise": "^3.2",
+        "vzgcoders/discordphp-bridge": "@dev",
+        "vzgcoders/youtubephp": "@dev"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "phpunit/phpunit": "^11.0 || ^10.5"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../DiscordPHP-Bridge",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../YoutubePHP",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bridge\\YouTube\\": "src/Bridge/YouTube/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bridge\\YouTube\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "cs": "php-cs-fixer fix",
+        "test": "phpunit"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
