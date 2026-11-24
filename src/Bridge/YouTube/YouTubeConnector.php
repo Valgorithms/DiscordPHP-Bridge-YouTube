@@ -211,6 +211,7 @@ final class YouTubeConnector implements Connector, ProvidesActions, Avatars, Rec
             // The sign-in's refresh token goes back to .env, so it happens once.
             'token_store' => new EnvFileTokenStore($this->config->envPath),
             'device_prompt' => fn (array $device) => $this->promptForDeviceCode($device),
+            'socket_options' => $bot->windowsDnsSocketOptions(),
             'quota' => [
                 'daily' => $this->config->dailyQuota,
                 'reserve' => $this->config->quotaReserve,
